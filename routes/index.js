@@ -29,12 +29,12 @@ router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 router.get('/register', userController.registerForm);
-
 router.post('/register', 
   userController.validadeRegister,
   userController.register,
   authController.login
 );
+router.get('/logout', authController.logout);
 
 router.get('/account', userController.account);
 router.post('/account', userController.updateAccount);
